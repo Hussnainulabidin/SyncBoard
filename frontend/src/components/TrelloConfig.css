@@ -1,0 +1,164 @@
+/* TrelloConfig Component Styles */
+
+.trello-config {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.trello-config.loading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-muted);
+}
+
+/* Config Header */
+.config-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.status-icon {
+  font-size: 1.25rem;
+}
+
+.config-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Disconnected State */
+.trello-config.disconnected {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: var(--danger);
+}
+
+.config-message {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.config-help {
+  background: var(--surface-light);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.config-help p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.config-help pre {
+  background: var(--background);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--primary-light);
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+
+.config-help code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.help-link {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+/* Connected State */
+.trello-config.connected {
+  background: rgba(34, 197, 94, 0.05);
+  border-color: var(--success);
+}
+
+.config-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+/* Config Fields */
+.config-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.config-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.config-field label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.config-field select {
+  padding: 0.75rem;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.config-field select:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.config-field select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Preview */
+.config-preview {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preview-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.preview-path {
+  font-size: 0.9rem;
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .config-fields {
+    grid-template-columns: 1fr;
+  }
+}

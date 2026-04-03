@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc \"C:\\\\Users\\\\Hussnain\\\\Downloads\\\\8A-A04 \\(1\\).docx\" -o \"C:\\\\Users\\\\Hussnain\\\\Downloads\\\\phase2.md\")",
+      "Bash(pandoc \"C:\\\\Users\\\\Hussnain\\\\Downloads\\\\Spring2026-AIPD-Course Project — Phase 3.docx\" -o \"C:\\\\Users\\\\Hussnain\\\\Downloads\\\\phase3.md\")",
+      "Bash(python3 -c \":*)",
+      "Read(//d/Programming/syncboard-mvp/**)",
+      "Bash(pandoc \"Spring2026-AIPD-Course Project — Phase 3.docx\" -o phase3_extracted.md)",
+      "Bash(python3 -c \"import zipfile; z = zipfile.ZipFile\\(''Spring2026-AIPD-Course Project — Phase 3.docx''\\); z.extractall\\(''docx_extracted''\\)\")",
+      "Bash(python3:*)"
+    ]
+  }
+}

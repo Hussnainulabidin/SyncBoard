@@ -1,0 +1,167 @@
+/* TicketReview Component Styles */
+
+.ticket-review {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.review-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.review-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.review-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Stats Banner */
+.stats-banner {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background: var(--surface-light);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.stat-item .stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.stat-item.highlight .stat-value {
+  color: var(--warning);
+}
+
+.stat-item .stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Review Controls */
+.review-controls {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.filter-group select {
+  padding: 0.5rem 1rem;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filter-group select:hover {
+  border-color: var(--primary);
+}
+
+.bulk-actions {
+  margin-left: auto;
+}
+
+.bulk-actions .btn-small {
+  background: var(--success);
+  color: white;
+}
+
+.bulk-actions .btn-small:hover {
+  background: #16a34a;
+}
+
+/* Tickets Grid */
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.no-tickets {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+/* Review Summary */
+.review-summary {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface-light);
+}
+
+.summary-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Scrollbar */
+.tickets-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tickets-grid::-webkit-scrollbar-track {
+  background: var(--surface-light);
+}
+
+.tickets-grid::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tickets-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .review-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .bulk-actions {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
