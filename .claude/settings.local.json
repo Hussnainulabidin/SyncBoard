@@ -7,7 +7,17 @@
       "Read(//d/Programming/syncboard-mvp/**)",
       "Bash(pandoc \"Spring2026-AIPD-Course Project — Phase 3.docx\" -o phase3_extracted.md)",
       "Bash(python3 -c \"import zipfile; z = zipfile.ZipFile\\(''Spring2026-AIPD-Course Project — Phase 3.docx''\\); z.extractall\\(''docx_extracted''\\)\")",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(python -m markitdown \"D:\\\\Programming\\\\syncboard-mvp\\\\syncboard-mvp\\\\docs\\\\SyncBoard_MVP_Technical_Summary.pptx\")",
+      "Bash(pip install:*)",
+      "Bash(SKILL_DIR=\"C:/Users/Hussnain/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/c0ed7a0a-1232-4932-bc8f-0302a2bf32fd/4ebc3bb1-86c5-4585-8b2e-9b7ce653c76c/skills/pptx\")",
+      "Bash(PPTX=\"D:/Programming/syncboard-mvp/syncboard-mvp/docs/SyncBoard_MVP_Technical_Summary.pptx\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/unpack.py\" \"$PPTX\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/unpacked/\")",
+      "Bash(python \"$SKILL_DIR/scripts/clean.py\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/unpacked/\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/pack.py\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/unpacked/\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/SyncBoard_MVP_Technical_Summary.pptx\" --original \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/SyncBoard_MVP_Technical_Summary.pptx\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/pack.py\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/unpacked/\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/SyncBoard_MVP_Technical_Summary_updated.pptx\" --original \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/SyncBoard_MVP_Technical_Summary.pptx\")",
+      "Bash(python -m markitdown \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/SyncBoard_MVP_Technical_Summary.pptx\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/unpack.py\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/SyncBoard_MVP_Technical_Summary.pptx\" \"D:/Programming/syncboard-mvp/syncboard-mvp/docs/unpacked/\")"
     ]
   }
 }

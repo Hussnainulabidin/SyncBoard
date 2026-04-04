@@ -185,14 +185,16 @@ function TicketCard({ ticket, onUpdate, onRemove }) {
                   </span>
                 </div>
               )}
+              <div className="confidence-label">
+                <span className="confidence-text">
+                  {Math.round(ticket.confidence * 100)}% confidence
+                </span>
+              </div>
               <div className="confidence-bar">
                 <div
                   className={`confidence-fill ${ticket.confidence < 0.7 ? 'warning' : ticket.confidence < 0.85 ? 'moderate' : ''}`}
                   style={{ width: `${ticket.confidence * 100}%` }}
                 />
-                <span className="confidence-text">
-                  {Math.round(ticket.confidence * 100)}% confidence
-                </span>
               </div>
             </div>
           )}

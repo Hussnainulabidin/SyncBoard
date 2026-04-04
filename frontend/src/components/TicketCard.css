@@ -194,11 +194,16 @@
 }
 
 /* Confidence Bar */
+.confidence-label {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3px;
+}
+
 .confidence-bar {
   height: 6px;
   background: var(--surface);
   border-radius: 3px;
-  position: relative;
   overflow: hidden;
 }
 
@@ -218,9 +223,6 @@
 }
 
 .confidence-text {
-  position: absolute;
-  right: 0;
-  top: -18px;
   font-size: 0.7rem;
   color: var(--text-muted);
 }
