@@ -6,6 +6,12 @@
 
 ---
 
+## 💡 Value Proposition
+
+> **Users save 10–15 minutes per meeting** by automatically generating structured Trello tickets instead of manual note-taking. A 30-minute team meeting that previously required manual task logging now produces ready-to-publish tickets in under 60 seconds.
+
+---
+
 ## 🎯 What This MVP Does
 
 SyncBoard automatically converts meeting recordings into properly formatted Trello cards with:
@@ -120,11 +126,12 @@ syncboard-mvp/
 │   │   ├── analyze.js        # AI analysis endpoints
 │   │   └── trello.js         # Trello integration
 │   ├── services/
-│   │   ├── whisperService.js # OpenAI Whisper integration
-│   │   ├── gptService.js     # GPT-4 analysis
-│   │   └── trelloService.js  # Trello API wrapper
+│   │   ├── whisperService.js  # Azure Whisper transcription
+│   │   ├── assemblyService.js # AssemblyAI speaker diarization
+│   │   ├── gptService.js      # Groq LLM action extraction
+│   │   └── trelloService.js   # Trello API wrapper
 │   ├── utils/
-│   │   └── prompts.js        # GPT-4 prompt templates
+│   │   └── prompts.js         # LLM prompt templates
 │   └── server.js
 ├── n8n-workflows/            # n8n automation workflows
 │   └── meeting-to-trello.json
@@ -163,8 +170,8 @@ syncboard-mvp/
 │           │                                                  │
 │           ▼                                                  │
 │  ┌─────────────────┐                                        │
-│  │  GPT-4o-mini    │  Action Item Extraction                │
-│  │  (Analysis)     │  + User Story Generation               │
+│  │  Groq LLM       │  Action Item Extraction                │
+│  │  (llama-3.3-70b)│  + User Story Generation               │
 │  └────────┬────────┘  + Deadline Parsing                    │
 │           │                                                  │
 │           ▼                                                  │
@@ -185,10 +192,10 @@ syncboard-mvp/
 ### Cost Per Meeting (1 hour)
 | Service | Cost |
 |---------|------|
-| Whisper API | $0.36 |
-| AssemblyAI | ~$0.90 |
-| GPT-4o-mini | ~$0.20 |
-| **Total** | **~$1.50** |
+| Azure Whisper API | $0.36 |
+| AssemblyAI (optional) | ~$0.90 |
+| Groq llama-3.3-70b | Free |
+| **Total** | **~$0.36 – $1.26** |
 
 ---
 
@@ -266,9 +273,11 @@ npm test
 
 ## 📝 Sample Data
 
+We use **real meeting recordings of 5–10 minutes** simulating typical team discussions (sprint planning, standup, project review). This is sufficient for MVP validation as it covers the most common meeting types where action items are discussed.
+
 The `sample-data/` folder contains:
-- `sample-standup.mp3`: A simulated 10-minute standup meeting
-- `expected-output.json`: The expected ticket extraction results
+- `test-meeting1.mp3` / `test-meeting2.mp3`: Simulated team meeting recordings
+- `expected-output.json`: Reference ticket extraction results
 
 Use these to validate the pipeline works correctly.
 
