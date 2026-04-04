@@ -57,8 +57,14 @@ desktop.ini
 *.sln
 
 # ========================
+# PPTX editing artifacts
+# ========================
+docs/unpacked/
+
+# ========================
 # Misc
 # ========================
 .npm
 .cache/
 *.tgz
+*.docx

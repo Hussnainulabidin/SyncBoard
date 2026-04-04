@@ -19,7 +19,7 @@ SyncBoard automatically converts meeting recordings into properly formatted Trel
 ```
 Meeting Recording → Upload → Transcription → AI Analysis → Review → Trello Cards
           ↓              ↓           ↓             ↓          ↓
-     Google Meet    Web UI     Whisper API    GPT-4      User confirms
+     Google Meet    Web UI     Whisper API    Groq LLM   User confirms
 ```
 
 ---
@@ -28,10 +28,10 @@ Meeting Recording → Upload → Transcription → AI Analysis → Review → Tr
 
 ### Prerequisites
 - Node.js 18+
-- Python 3.10+
 - npm or yarn
-- OpenAI API Key
-- AssemblyAI API Key (optional, for speaker diarization)
+- Azure OpenAI API Key (for Whisper transcription)
+- Groq API Key (free — for ticket analysis)
+- AssemblyAI API Key (optional — for speaker diarization)
 - Trello API Key and Token
 
 ### Installation
@@ -50,27 +50,33 @@ cd ../frontend
 npm install
 
 # Configure environment
-cp .env.example .env
-# Edit .env with your API keys
+cp .env.example backend/.env
+# Edit backend/.env with your API keys
 ```
 
 ### Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `backend/.env` file (see `.env.example` for reference):
 
 ```env
-# OpenAI Configuration
-OPENAI_API_KEY=sk-your-key-here
+# Azure OpenAI (Whisper transcription)
+AZURE_OPENAI_API_KEY=your-azure-key
+AZURE_OPENAI_ENDPOINT=https://your-resource.services.ai.azure.com/
+AZURE_OPENAI_API_VERSION=2024-02-15-preview
+AZURE_OPENAI_WHISPER_DEPLOYMENT=whisper-1
 
-# AssemblyAI Configuration (optional - for speaker ID)
-ASSEMBLYAI_API_KEY=your-key-here
+# Groq (ticket analysis — free tier)
+GROQ_API_KEY=gsk_your-groq-key
+GROQ_MODEL=llama-3.3-70b-versatile
 
-# Trello Configuration
-TRELLO_API_KEY=your-key-here
-TRELLO_TOKEN=your-token-here
-TRELLO_BOARD_ID=your-board-id
+# AssemblyAI (optional — speaker diarization)
+ASSEMBLYAI_API_KEY=your-assemblyai-key
 
-# Server Configuration
+# Trello
+TRELLO_API_KEY=your-trello-api-key
+TRELLO_TOKEN=your-trello-token
+
+# Server
 PORT=3001
 NODE_ENV=development
 ```
