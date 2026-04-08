@@ -309,7 +309,6 @@ Use these to validate the pipeline works correctly.
 - **Sohaib** (22I-0879) - Frontend & Integration
 - **Hamdan Sajid** (22I-0872) - Research & Testing
 
-**Supervisor**: Ms. Urooj Ghani
 
 ---
 
