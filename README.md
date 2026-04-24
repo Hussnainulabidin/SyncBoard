@@ -308,7 +308,7 @@ Use these to validate the pipeline works correctly.
 - **Hussnain** (22I-1102) - Backend & AI Pipeline
 - **Sohaib** (22I-0879) - Frontend & Integration
 - **Hamdan Sajid** (22I-0872) - Research & Testing
-
+- **Atif Ibrahim** (22I-0872) - NPC
 
 ---
 
